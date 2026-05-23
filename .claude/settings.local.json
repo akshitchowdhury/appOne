@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status 2>&1)",
+      "PowerShell(Get-Content \"$env:APPDATA\\\\GitHub CLI\\\\hosts.yml\" 2>&1; if \\(-not $?\\) { Get-ChildItem \"$env:APPDATA\\\\GitHub CLI\\\\\" 2>&1 })"
+    ]
+  }
+}
