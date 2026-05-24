@@ -146,7 +146,7 @@ const SECTIONS: Section[] = [
     intro: 'Every shell command used to go from a blank Ubuntu instance to a live React app served over HTTP — with context on what each command actually does and why.',
     steps: [
       {
-        title: 'Get Through the Door',
+        title: 'Connecting via SSH',
         narrative: 'The .pem key file AWS gives you is intentionally too permissive out of the box — SSH will refuse to connect until you lock it down. Once the permissions are set, you SSH straight into the instance as the default ubuntu user.',
         lines: [
           cmt('# Lock the key file — SSH will flat-out refuse if anyone else can read it'),
@@ -157,7 +157,7 @@ const SECTIONS: Section[] = [
         ],
       },
       {
-        title: 'Prep the Machine',
+        title: 'Prepping the Machine — Updates & Installs',
         narrative: "A freshly launched Ubuntu instance hasn't been updated since its AMI was built — there could be weeks of patches waiting. We update first, then pull in Node.js 18 via Nodesource's official setup script (Ubuntu's default apt repo ships an older version), and finally install Nginx which will be our web server.",
         lines: [
           cmt('# Grab the latest package index and apply any pending security patches'),
@@ -176,7 +176,7 @@ const SECTIONS: Section[] = [
         ],
       },
       {
-        title: 'Pull the Code & Build',
+        title: 'Pulling the Code & Building the App',
         narrative: "Clone the repository directly onto the server, install dependencies, then run the production build. Vite compiles everything — React, TypeScript, CSS — into a compact static bundle in dist/. That folder is all Nginx will ever need to serve; Node.js isn't involved at runtime.",
         lines: [
           cmt('# Pull the source code onto the EC2 instance'),
@@ -191,7 +191,7 @@ const SECTIONS: Section[] = [
         ],
       },
       {
-        title: 'Wire Up Nginx & Go Live',
+        title: 'Serving with Nginx',
         narrative: 'Copy the compiled bundle to the directory Nginx is already watching, do a config dry-run to catch any syntax errors before applying, then restart the service and tell systemd to bring it back automatically if the instance ever reboots.',
         lines: [
           cmt('# Move the build output to where Nginx expects static files to live'),
