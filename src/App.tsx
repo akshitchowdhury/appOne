@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ArchDiagram from './components/ArchDiagram'
 import TabPanel from './components/TabPanel'
+import ScreenshotsPage from './components/ScreenshotsPage'
 import './App.css'
 
-const TABS = ['Architecture', 'Phase Breakdown', 'Stack Details', 'Live Flow']
+const TABS = ['Architecture', 'Phase Breakdown', 'Stack Details', 'Live Flow', 'Proof of Work']
 
 export default function App() {
   const [activeTab, setActiveTab] = useState(0)
@@ -45,8 +46,11 @@ export default function App() {
           {activeTab === 0 && (
             <ArchDiagram activeNode={activeNode} setActiveNode={setActiveNode} />
           )}
-          {activeTab !== 0 && (
+          {activeTab >= 1 && activeTab <= 3 && (
             <TabPanel tab={activeTab} />
+          )}
+          {activeTab === 4 && (
+            <ScreenshotsPage />
           )}
         </motion.div>
       </AnimatePresence>
