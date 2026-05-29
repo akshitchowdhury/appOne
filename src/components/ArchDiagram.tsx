@@ -26,7 +26,7 @@ const NODES: Node[] = [
     textColor: '#9fe1cb',
     subColor: '#5dcaa5',
     phase: 'Phase 1',
-    detail: 'Create an AWS account with free tier access. Set up IAM user with least-privilege permissions. Enable MFA on root account. Configure billing alerts so you never get surprised.',
+    detail: 'Created an AWS account with free tier access. Set up IAM user with least-privilege permissions. Enabled MFA on root account. Configured billing alerts to get alerts.',
   },
   {
     id: 'ec2',
@@ -38,7 +38,7 @@ const NODES: Node[] = [
     textColor: '#cecbf6',
     subColor: '#afa9ec',
     phase: 'Phase 2',
-    detail: 'Launch a t2.micro Ubuntu 22.04 instance — free tier eligible. Create a key pair for SSH access. Assign an Elastic IP so your public address stays stable across reboots.',
+    detail: 'Launched a t2.micro Ubuntu 22.04 instance — free tier eligible. Created a key pair for SSH access. Assigned an Elastic IP so that the public address stays stable across reboots.',
   },
   {
     id: 'nginx',
@@ -50,7 +50,7 @@ const NODES: Node[] = [
     textColor: '#cecbf6',
     subColor: '#afa9ec',
     phase: 'Phase 2',
-    detail: 'SSH into the instance, clone your repo, run `npm run build`. Install Nginx and point its root to the `dist/` folder. Nginx serves the static bundle over port 80 to any browser.',
+    detail: 'SSH into the instance, cloned the repo, run `npm run build`. Installed Nginx and pointed its root to the `dist/` folder. Nginx serves the static bundle over port 80 to any browser.',
   },
   {
     id: 'sg',
@@ -62,7 +62,7 @@ const NODES: Node[] = [
     textColor: '#fac775',
     subColor: '#ef9f27',
     phase: 'Phase 2',
-    detail: 'Security Groups act as virtual firewalls. Open port 22 (SSH) to your IP only, port 80 (HTTP) and 443 (HTTPS) to 0.0.0.0/0 so the world can reach the app.',
+    detail: 'Security Groups act here as virtual firewalls. Opened port 22 (SSH) to your IP only, port 80 (HTTP) and 443 (HTTPS) to 0.0.0.0/0 so the world can reach the app.',
   },
   {
     id: 'billing',
@@ -74,7 +74,7 @@ const NODES: Node[] = [
     textColor: '#f5c4b3',
     subColor: '#f0997b',
     phase: 'Phase 1',
-    detail: 'Create a CloudWatch billing alarm that fires when estimated charges exceed $1. Wire it to an SNS topic that emails you. Keeps free-tier surprises to zero.',
+    detail: 'Created a CloudWatch billing alarm that fires when estimated charges exceed $1. Wired it to an SNS topic that emails you. Keeps free-tier surprises to zero.',
   },
   {
     id: 'github',
@@ -86,7 +86,7 @@ const NODES: Node[] = [
     textColor: '#d3d1c7',
     subColor: '#b4b2a9',
     phase: 'Phase 3',
-    detail: 'Push your source code, architecture diagram, and screenshots to GitHub. A detailed README documents the setup steps — this is your proof-of-work and portfolio piece.',
+    detail: 'Pushed the source code, architecture diagram, and screenshots to GitHub. A detailed README documents the setup steps .',
   },
   {
     id: 'user',
